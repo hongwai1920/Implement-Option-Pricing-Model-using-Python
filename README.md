@@ -1,7 +1,7 @@
 # Quantitative-Finance-Computer-Projects (Python) 
 This repository contains all quantitative finance computer projects that I have done so far using Python.
 
-## Using ARIME to forecast returns
+## Using ARIMA to forecast returns
 It contains several ipynb notebooks containing detailed introduction to AR, MA, ARMA and ARIMA model. Several tests such as Augmented Dickey Fuller test, Unit test for stationarity are introduced as well.  
 
 ## 1. Pricing of vanilla options in the Black-Scholes world and Monte Carlo Simulation.ipynb
