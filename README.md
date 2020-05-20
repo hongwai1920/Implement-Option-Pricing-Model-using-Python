@@ -2,7 +2,7 @@
 This repository contains all quantitative finance computer projects that I have done so far using Python.
 
 ## Using ARIMA to forecast returns
-It contains several ipynb notebooks containing detailed introduction to AR, MA, ARMA and ARIMA models. 
+This folder contains several ipynb notebooks containing detailed introduction to AR, MA, ARMA and ARIMA models. 
 We also introduced and implemented several stationarity tests such as Augmented Dickey-Fuller (ADF) test and KPSS.  
 
 ## 1. Pricing of vanilla options in the Black-Scholes world and Monte Carlo Simulation.ipynb
