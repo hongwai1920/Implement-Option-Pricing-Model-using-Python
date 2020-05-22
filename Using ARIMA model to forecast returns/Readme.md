@@ -1,2 +1,3 @@
-# NTU Algorithmic Trading Club
-This folder contains all materials that I used for my presentation to NTU Algorithmic Trading Club on using ARIMA model to forecast stock returns.
+# Using ARIMA model to forecast returns
+This folder contains a detailed introduction to time series analysis models such as AutoRegressive (AR), Moving Average (MA), AutoRegressive Moving Average (ARMA) and AutoRegressive Integrated Moving Average (ARIMA).
+We use Python's library statsmodels to implement all models above and use the ARIMA model to forecast future stock prices.
