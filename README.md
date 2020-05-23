@@ -1,5 +1,5 @@
 # Python Projects
-This repository contains all quantitative finance computer projects that I have done so far using Python.
+This repository contains all Python projects for my personal interests. 
 
 ## Using ARIMA to forecast returns
 This folder contains several ipynb notebooks containing detailed introduction to AR, MA, ARMA and ARIMA models. 
