@@ -1,4 +1,4 @@
-# Quantitative-Finance-Computer-Projects (Python) 
+# Python Projects
 This repository contains all quantitative finance computer projects that I have done so far using Python.
 
 ## Using ARIMA to forecast returns
