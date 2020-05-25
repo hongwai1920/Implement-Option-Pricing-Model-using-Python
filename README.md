@@ -1,6 +1,9 @@
 # Python Projects
 This repository contains all Python projects for my personal interests. 
 
+## House Prices (Kaggle)
+It contains various machine learning algorithms (Linear Regression) on the dataset house prices obtained from Kaggle to perform prediction.
+
 ## Using ARIMA to forecast returns
 This folder contains several ipynb notebooks containing detailed introduction to AR, MA, ARMA and ARIMA models. 
 We also introduced and implemented several stationarity tests such as Augmented Dickey-Fuller (ADF) test and KPSS.  
