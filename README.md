@@ -2,7 +2,7 @@
 This repository contains all my personal Python projects. 
 
 ## House Prices (Kaggle)
-It contains various machine learning algorithms (Linear Regression) on the dataset house prices obtained from Kaggle to perform prediction.
+It contains various machine learning algorithms implementations (Linear Regression) on the dataset house prices obtained from Kaggle to perform prediction.
 Public score from Kaggle is indiacted beside the algorithms.
 
 ## Using ARIMA to forecast returns
