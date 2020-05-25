@@ -1,5 +1,5 @@
 # Python Projects
-This repository contains all Python projects for my personal interests. 
+This repository contains all my personal Python projects. 
 
 ## House Prices (Kaggle)
 It contains various machine learning algorithms (Linear Regression) on the dataset house prices obtained from Kaggle to perform prediction.
