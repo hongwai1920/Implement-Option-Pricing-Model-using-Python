@@ -3,4 +3,4 @@ This repository contains all my regression methods on the house prices dataset f
 
 | Regression Methods| Metrics | Public Score (Kaggle) | 
 | ---- | ---- | ---- |
-|Linear Regression | RMSE | 0.25715 |
+|Linear Regression | RMSE | 0.23495 |
