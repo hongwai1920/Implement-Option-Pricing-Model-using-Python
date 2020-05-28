@@ -1,10 +1,6 @@
 # Implement Option Pricing Model using Python
 This repository contains all my personal projects Option Pricing Model using Python.
 
-## House Prices (Kaggle)
-It contains various machine learning algorithms implementations (Linear Regression with Regularization) on the dataset house prices obtained from Kaggle to perform prediction.
-Public score from Kaggle is indiacted beside the algorithms.
-
 ## 1. Pricing of vanilla options in the Black-Scholes world and Monte Carlo Simulation.ipynb
 This notebook is a simple Python's implemention of analytical formulas of vanilla options including European and America call and put options. It also contains formulas of binary put, call and forward contract.
 
