@@ -5,10 +5,6 @@ This repository contains all my personal projects Option Pricing Model using Pyt
 It contains various machine learning algorithms implementations (Linear Regression with Regularization) on the dataset house prices obtained from Kaggle to perform prediction.
 Public score from Kaggle is indiacted beside the algorithms.
 
-## Using ARIMA to forecast returns
-This folder contains several ipynb notebooks containing detailed introduction to AR, MA, ARMA and ARIMA models. 
-We also introduced and implemented several stationarity tests such as Augmented Dickey-Fuller (ADF) test and KPSS.  
-
 ## 1. Pricing of vanilla options in the Black-Scholes world and Monte Carlo Simulation.ipynb
 This notebook is a simple Python's implemention of analytical formulas of vanilla options including European and America call and put options. It also contains formulas of binary put, call and forward contract.
 
