@@ -1,5 +1,5 @@
-# Python Projects
-This repository contains all my personal Python projects. 
+# Implement Option Pricing Model using Python
+This repository contains all my personal projects Option Pricing Model using Python.
 
 ## House Prices (Kaggle)
 It contains various machine learning algorithms implementations (Linear Regression with Regularization) on the dataset house prices obtained from Kaggle to perform prediction.
