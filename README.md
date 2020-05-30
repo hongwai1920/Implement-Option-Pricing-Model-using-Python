@@ -21,5 +21,13 @@ The following is a plot its simulation.
 This notebook performs sensitivity analysis on options' value by applying finite difference and Monte Carlo methods.
 We also implemented numerical methods such as pathwise derivative estimate and likelihood ratio methods to approximate option's greeks.
 
+For example, to calculate delta of an European call option, pathwise derivative estimate asserts that 
+<p align="center"> <img  src="https://latex.codecogs.com/svg.latex?\frac{\partial&space;c}{\partial&space;S_0}&space;=&space;\frac{\partial}{\partial&space;S_0}&space;\mathbb{E}[e^{-rT}(S_T-K)^&plus;]&space;=&space;\mathbb{E}\left[&space;\frac{\partial}{\partial&space;S_0}&space;e^{-rT}(S_T-K)^&plus;&space;\right]&space;=&space;\mathbb{E}&space;\left[e^{-rT}&space;1_{\{S_T>K\}}&space;\frac{\partial&space;S_T}{\partial&space;S_0}&space;\right]&space;=&space;\mathbb{E}&space;\left[&space;e^{-rT}&space;1_{\{S_T>K\}}&space;e^{(r-d&space;-&space;\frac{1}{2}&space;\sigma^2)T&space;&plus;&space;\sigma&space;\sqrt{T}&space;Z}&space;\right]&space;=&space;\mathbb{E}&space;\left[&space;e^{-rT}&space;1_{\{S_T>K\}}&space;\frac{S_T}{S_0}\right]," title="\frac{\partial c}{\partial S_0} = \frac{\partial}{\partial S_0} \mathbb{E}[e^{-rT}(S_T-K)^+] = \mathbb{E}\left[ \frac{\partial}{\partial S_0} e^{-rT}(S_T-K)^+ \right] = \mathbb{E} \left[e^{-rT} 1_{\{S_T>K\}} \frac{\partial S_T}{\partial S_0} \right] = \mathbb{E} \left[ e^{-rT} 1_{\{S_T>K\}} e^{(r-d - \frac{1}{2} \sigma^2)T + \sigma \sqrt{T} Z} \right] = \mathbb{E} \left[ e^{-rT} 1_{\{S_T>K\}} \frac{S_T}{S_0}\right],"></p> 
+Therefore, to calculate the delta, one can apply Monte-Carlo method to calculate the final expectation.
+
+On the other hand, to calculate delta of an European call option, the likelihood ratio method asserts that 
+<p align="center"> <img  src="https://latex.codecogs.com/svg.latex?\Delta&space;=&space;\frac{d}{d&space;S(0)}\mathbb{E}&space;[e^{-rT}&space;(S_T-K)^&plus;]&space;=&space;\mathbb{E}&space;\left[&space;e^{-rT}(S_T-K)^&plus;&space;\left(&space;\frac{&space;\ln&space;\left(&space;\frac{S(T)}{S(0)}&space;\right)&space;-&space;(r&space;-&space;\frac{1}{2}\sigma^2)T&space;}{&space;S(0)\sigma^2&space;T}&space;\right)&space;\right]." title="\Delta = \frac{d}{d S(0)}\mathbb{E} [e^{-rT} (S_T-K)^+] = \mathbb{E} \left[ e^{-rT}(S_T-K)^+ \left( \frac{ \ln \left( \frac{S(T)}{S(0)} \right) - (r - \frac{1}{2}\sigma^2)T }{ S(0)\sigma^2 T} \right) \right]."></p> 
+Therefore, one can use the Monte-Carlo method again to calculate the final expectation.
+
 ## 3. Hedging.ipynb (In progress)
 This notebook simulates delta-hedging on European call option.
