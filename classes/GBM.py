@@ -51,6 +51,9 @@ def GBM_fd(S0, K, r, d, sigma, T, num_steps = 50, num_paths = 1, plot = False, s
 
 def GBM_formula(S0, K, mu, d, sigma, T, num_paths = 1, seed = None):
     '''
+    Simulate Geometric Brownian Motion using analytical formula
+    
+    
     inputs:
     ===========
     
