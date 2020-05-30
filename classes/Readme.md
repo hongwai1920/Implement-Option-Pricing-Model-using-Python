@@ -27,12 +27,12 @@ It contains 2 classes `Option` and a subclass `Greek`.
     * `print_all_values(self, face_value)`
 
 2. Class `Greek(Option)` with methods 
-    * delta(self)
-    * gamma(self)
-    * vega(self)
-    * rho(self)
-    * theta(self)
-    * print_all(self)
+    * `delta(self)`
+    * `gamma(self)`
+    * `vega(self)`
+    * `rho(self)`
+    * `theta(self)`
+    * `print_all(self)`
   
 ## Payoff.py
 It contains a class `Payoff` with methods 
