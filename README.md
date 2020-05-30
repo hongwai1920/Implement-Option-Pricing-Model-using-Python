@@ -9,6 +9,9 @@ We started with testing their consistencies to determine their correctness inclu
 Then we validated all formulas using the Monte Carlo method. 
 We also implemented Euler-Maruyama method to simulate the dynamic of stock price under Geometric Brownian Motion Stochastic Differential Equation.
 
+<p align="center"> <img  src="https://github.com/hongwai1920/Implement-Option-Pricing-Model-using-Python/blob/master/GBM%20simulation.png" width="800" height="500"></p> 
+
+
 ## 2. Vanilla Greeks using finite difference, pathwise derivative estimate and likelihood ratio methods.ipynb
 This notebook performs sensitivity analysis on options' value by applying finite difference and Monte Carlo methods.
 We also implemented numerical methods such as pathwise derivative estimate and likelihood ratio methods to approximate option's greeks.
