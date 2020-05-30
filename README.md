@@ -11,7 +11,7 @@ We also implemented Euler-Maruyama method to simulate the dynamic of stock price
 
 ## 2. Vanilla Greeks using finite difference, pathwise derivative estimate and likelihood ratio methods.ipynb
 This notebook performs sensitivity analysis on options' value by applying finite difference and Monte Carlo methods.
-We also implemented pathwise derivative estimate and likelihood ratio methods to approximate option's greeks.
+We also implemented numerical methods such as pathwise derivative estimate and likelihood ratio methods to approximate option's greeks.
 
 ## 3. Hedging.ipynb (In progress)
 This notebook simulates delta-hedging on European call option.
