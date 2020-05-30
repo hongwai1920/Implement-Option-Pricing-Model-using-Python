@@ -101,6 +101,8 @@ def monte_carlo(payoff):
 	
 def black_scholes_monte_carlo_pricer(option_type, S0, K, r, d, sigma, T, num_steps = 100, num_paths = 20, full_list = False, seed = None):
     '''
+    Apply Monte Carlo method to price Black Schole option
+    
     inputs:
     ==========
     
