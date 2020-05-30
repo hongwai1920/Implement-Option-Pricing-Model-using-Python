@@ -82,3 +82,32 @@ class Option:
         print('Binary call: {}'.format(self.binary_call(face_value = 1)))
         print('Binary put: {}'.format(self.binary_put(face_value = 1)))
         print('Forward contract: {}'.format(self.forward_contract()))
+        
+        
+        
+class Greeks(Option):
+    '''
+    This class contains greeks of the European call option
+    '''
+    def delta(self):
+        return norm.cdf(self.d1)
+    
+    def gamma(self):
+        return norm.pdf(self.d1) / (self.S * self.sigma * np.sqrt(self.T))
+    
+    def vega(self):
+        return self.S * np.sqrt(self.T) * norm.pdf(self.d1)
+    
+    def rho(self):
+        return self.K * self.T * np.exp(-self.r * self.T) * norm.cdf(self.d2)
+    
+    def theta(self):
+        return - self.r * self.K * np.exp(-self.r * self.T) * norm.cdf(self.d2) - \
+    (self.S * norm.pdf(self.d1) * self.sigma) / (2 * np.sqrt(self.T))
+    
+    def print_all(self):
+        print('Delta: {}'.format(self.delta()))
+        print('Gamma: {}'.format(self.gamma()))
+        print('Vega: {}'.format(self.vega()))
+        print('Rho: {}'.format(self.rho()))
+        print('Theta: {}'.format(self.theta()))
