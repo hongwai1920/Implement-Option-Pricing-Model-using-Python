@@ -28,6 +28,3 @@ Therefore, to calculate the delta, one can apply Monte-Carlo method to calculate
 On the other hand, the likelihood ratio method asserts that 
 <p align="center"> <img  src="https://latex.codecogs.com/svg.latex?\Delta&space;=&space;\frac{d}{d&space;S(0)}\mathbb{E}&space;[e^{-rT}&space;(S_T-K)^&plus;]&space;=&space;\mathbb{E}&space;\left[&space;e^{-rT}(S_T-K)^&plus;&space;\left(&space;\frac{&space;\ln&space;\left(&space;\frac{S(T)}{S(0)}&space;\right)&space;-&space;(r&space;-&space;\frac{1}{2}\sigma^2)T&space;}{&space;S(0)\sigma^2&space;T}&space;\right)&space;\right]." title="\Delta = \frac{d}{d S(0)}\mathbb{E} [e^{-rT} (S_T-K)^+] = \mathbb{E} \left[ e^{-rT}(S_T-K)^+ \left( \frac{ \ln \left( \frac{S(T)}{S(0)} \right) - (r - \frac{1}{2}\sigma^2)T }{ S(0)\sigma^2 T} \right) \right]."></p> 
 Therefore, one can use the Monte-Carlo method again to calculate the final expectation.
-
-## 3. Hedging.ipynb (In progress)
-This notebook simulates delta-hedging on European call option.
