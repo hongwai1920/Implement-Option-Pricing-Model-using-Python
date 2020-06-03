@@ -38,7 +38,7 @@ class PayOff:
             raise Exception('Unknown option type found.')
 
 
-def GBM_fd(S0, K, r, d, sigma, T, num_steps = 50, num_paths = 1, plot = False, seed = None):
+def GBM_fd(S0, r, d, sigma, T, num_steps = 50, num_paths = 1, plot = False, seed = None):
     '''
     Simulate Geometric Brownian Motion Stochastic Differential Equation using Euler'Maruyama method (finite difference)
     to calculate terminal stock price
@@ -48,7 +48,6 @@ def GBM_fd(S0, K, r, d, sigma, T, num_steps = 50, num_paths = 1, plot = False, s
     ===========
     
     S0: initial stock price
-    K: strike price
     r: risk-free interest rate
     d: dividend
     sigma: volatility 
@@ -62,7 +61,7 @@ def GBM_fd(S0, K, r, d, sigma, T, num_steps = 50, num_paths = 1, plot = False, s
     =========
     numpy array of terminal stock prices of all paths
     '''
-    
+
     dt = T / num_steps
     
     if num_paths == 1:
@@ -85,7 +84,7 @@ def GBM_fd(S0, K, r, d, sigma, T, num_steps = 50, num_paths = 1, plot = False, s
     return S_path[-1]
 
 
-def GBM_formula(S0, K, mu, d, sigma, T, num_paths = 1, seed = None):
+def GBM_formula(S0, mu, d, sigma, T, num_paths = 1, seed = None):
     '''
     Simulate Geometric Brownian Motion using analytical formula
     
@@ -94,7 +93,6 @@ def GBM_formula(S0, K, mu, d, sigma, T, num_paths = 1, seed = None):
     ===========
     
     S0: initial stock price
-    K: strike price
     mu: drift
     d: dividend
     sigma: volatility 
@@ -110,10 +108,6 @@ def GBM_formula(S0, K, mu, d, sigma, T, num_paths = 1, seed = None):
     
     return S0 * np.exp((mu - d - 0.5 * sigma ** 2) * T + sigma * np.sqrt(T) * np.random.RandomState(seed).standard_normal(num_paths))
     
-    
-    
-    
-
 
 def monte_carlo(payoff):
     '''
@@ -160,16 +154,17 @@ def black_scholes_monte_carlo_pricer(option_type, S0, K, r, d, sigma, T, num_ste
     Black-Scholes price of the option using monte carlo method
     '''
     
+
     if not full_list:
-        ST = GBM_fd(S0, K, r, d, sigma, T, num_steps, 2**num_paths, False, seed)
-        payoff = np.exp(- r * T) * PayOff(option_type, K)(ST)
-        return monte_carlo(payoff)
+      ST = GBM_fd(S0, r, d, sigma, T, num_steps, 2**num_paths, plot = False, seed = seed)
+      payoff = np.exp(- r * T) * PayOff(option_type, K)(ST)
+      return monte_carlo(payoff)
     
     mc = [0] * num_paths
     
     for num_path in range(1, num_paths + 1):
-        ST = GBM_fd(S0, K, r, d, sigma, T, num_steps, 2**num_path, False, seed)
-        payoff = np.exp(- r * T) * PayOff(option_type, K)(ST)
-        mc[num_path - 1] = monte_carlo(payoff)
+      ST = GBM_fd(S0, r, d, sigma, T, num_steps, 2**num_path, plot = False, seed = seed)
+      payoff = np.exp(- r * T) * PayOff(option_type, K)(ST)
+      mc[num_path - 1] = monte_carlo(payoff)
     
     return mc
