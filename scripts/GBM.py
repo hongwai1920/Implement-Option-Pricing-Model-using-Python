@@ -61,7 +61,7 @@ def GBM_fd(S0, r, d, sigma, T, num_steps = 50, num_paths = 1, plot = False, seed
     =========
     numpy array of terminal stock prices of all paths
     '''
-
+    
     dt = T / num_steps
     
     if num_paths == 1:
@@ -108,6 +108,10 @@ def GBM_formula(S0, mu, d, sigma, T, num_paths = 1, seed = None):
     
     return S0 * np.exp((mu - d - 0.5 * sigma ** 2) * T + sigma * np.sqrt(T) * np.random.RandomState(seed).standard_normal(num_paths))
     
+    
+    
+    
+
 
 def monte_carlo(payoff):
     '''
@@ -154,17 +158,16 @@ def black_scholes_monte_carlo_pricer(option_type, S0, K, r, d, sigma, T, num_ste
     Black-Scholes price of the option using monte carlo method
     '''
     
-
     if not full_list:
-      ST = GBM_fd(S0, r, d, sigma, T, num_steps, 2**num_paths, plot = False, seed = seed)
-      payoff = np.exp(- r * T) * PayOff(option_type, K)(ST)
-      return monte_carlo(payoff)
+        ST = GBM_fd(S0, r, d, sigma, T, num_steps, 2**num_paths, False, seed)
+        payoff = np.exp(- r * T) * PayOff(option_type, K)(ST)
+        return monte_carlo(payoff)
     
     mc = [0] * num_paths
     
     for num_path in range(1, num_paths + 1):
-      ST = GBM_fd(S0, r, d, sigma, T, num_steps, 2**num_path, plot = False, seed = seed)
-      payoff = np.exp(- r * T) * PayOff(option_type, K)(ST)
-      mc[num_path - 1] = monte_carlo(payoff)
+        ST = GBM_fd(S0, r, d, sigma, T, num_steps, 2**num_path, False, seed)
+        payoff = np.exp(- r * T) * PayOff(option_type, K)(ST)
+        mc[num_path - 1] = monte_carlo(payoff)
     
     return mc

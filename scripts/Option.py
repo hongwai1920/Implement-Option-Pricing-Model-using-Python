@@ -82,15 +82,18 @@ class Option:
         print('Binary call: {}'.format(self.binary_call(face_value = 1)))
         print('Binary put: {}'.format(self.binary_put(face_value = 1)))
         print('Forward contract: {}'.format(self.forward_contract()))
-        
-        
-        
+
+
 class Greeks(Option):
     '''
-    This class contains greeks of the European call option
+    This class contains greeks of the European call and put options
     '''
-    def delta(self):
+    
+    def delta(self, option_type):
+      if option_type == 'call':
         return norm.cdf(self.d1)
+      elif option_type == 'put':
+        return norm.cdf(self.d1) - 1
     
     def gamma(self):
         return norm.pdf(self.d1) / (self.S * self.sigma * np.sqrt(self.T))
@@ -98,16 +101,33 @@ class Greeks(Option):
     def vega(self):
         return self.S * np.sqrt(self.T) * norm.pdf(self.d1)
     
-    def rho(self):
+    def rho(self, option_type):
+      if option_type == 'call':
         return self.K * self.T * np.exp(-self.r * self.T) * norm.cdf(self.d2)
+      elif option_type == 'put':
+        return -self.K * self.T * np.exp(-self.r * self.T) * norm.cdf(-self.d2)
     
-    def theta(self):
+    def theta(self, option_type):
+      if option_type == 'call':
         return - self.r * self.K * np.exp(-self.r * self.T) * norm.cdf(self.d2) - \
     (self.S * norm.pdf(self.d1) * self.sigma) / (2 * np.sqrt(self.T))
+      elif option_type == 'put':
+        return self.r * self.K * np.exp(-self.r * self.T) * norm.cdf(-self.d2) - \
+    (self.S * norm.pdf(self.d1) * self.sigma) / (2 * np.sqrt(self.T))
     
-    def print_all(self):
-        print('Delta: {}'.format(self.delta()))
-        print('Gamma: {}'.format(self.gamma()))
-        print('Vega: {}'.format(self.vega()))
-        print('Rho: {}'.format(self.rho()))
-        print('Theta: {}'.format(self.theta()))
+    def get_all(self):
+        call = 'call'
+        put = 'put'
+        delta_c = self.delta(call)
+        delta_p = self.delta(put)
+        gamma_c = self.gamma()
+        gamma_p = self.gamma()
+        vega_c = self.vega()
+        vega_p = self.vega()
+        rho_c = self.rho(call)
+        rho_p = self.rho(put)
+        theta_c = self.theta(call)
+        theta_p = self.theta(put)
+        greeks = { 'call': {'delta': delta_c, 'gamma': gamma_c, 'vega': vega_c, 'rho': rho_c, 'theta': theta_c}, 
+                   'put' : {'delta': delta_p, 'gamma': gamma_p, 'vega': vega_p, 'rho': rho_p, 'theta': theta_p} }
+        return greeks
