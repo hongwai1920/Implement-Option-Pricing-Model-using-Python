@@ -34,4 +34,4 @@ This notebook uses various binomial trees simulation including CRR and discretiz
 The following plots contain convergence of CRR and GBM simulations for European and Binary call and put options.
 Green line is the analytical pricing obtained by Black-Scholes.
 
-<p align="center"> <img  src="https://github.com/hongwai1920/Implement-Option-Pricing-Model-using-Python/blob/master/Images/CCR_GBM_tree_simulations.png" width="900" height="600"></p> 
+<p align="center"> <img  src="https://github.com/hongwai1920/Implement-Option-Pricing-Model-using-Python/blob/master/Images/CCR_GBM_tree_simulations.png" width="850" height="600"></p> 
