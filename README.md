@@ -31,3 +31,7 @@ Therefore, one can use the Monte-Carlo method again to calculate the final expec
 
 ## [4. Recombining_Trees.ipynb](https://nbviewer.jupyter.org/github/hongwai1920/Implement-Option-Pricing-Model-using-Python/blob/master/4.%20Recombining_Trees.ipynb)
 This notebook uses various binomial trees simulation including CRR and discretize GBM to price options. 
+The following plots contain convergence of CRR and GBM simulations for European and Binary call and put options.
+Green line is the analytical pricing obtained by Black-Scholes.
+
+<p align="center"> <img  src="https://github.com/hongwai1920/Implement-Option-Pricing-Model-using-Python/blob/master/Images/CCR_GBM_tree_simulations.png" width="900" height="600"></p> 
