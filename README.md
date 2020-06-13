@@ -34,6 +34,11 @@ This notebook uses various binomial trees simulation including CRR and discretiz
 The following plots contain convergence of CRR and GBM simulations for European and Binary call and put options.
 Green line is the analytical pricing obtained by Black-Scholes.
 
+The parameters are `spot = 100`, `strike = 100`, `volatility = 0.1`, `risk-free interest rate = 0.05`, `dividend = 0` and `time to maturity = 2`.
+
+For BS price at both American call and put options, the green line corresponds to the respective European call and put option.
+Since dividend is zero, both American and European call should worth the same, which is illustrated in the American call plot below.
+
 <p align="center"> <img  src="https://github.com/hongwai1920/Implement-Option-Pricing-Model-using-Python/blob/master/Images/CCR_GBM_tree_simulations.png" width="850" height="600"></p> 
 
 ## Plot_Option_Value_Against_Vol_for_Various_Moneyness.ipynb
