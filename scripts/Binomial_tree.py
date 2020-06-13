@@ -64,15 +64,16 @@ class BinomialTree:
 
     return dt, up, down, price_tree
 
-  def option_price(self, num_sim, payoff, model = 'crr'):
+  def option_price(self, num_sim, payoff, model = 'crr', exercise_style = 'European'):
     '''
     inputs:
     num_sim: number of simulations 
     payoff: (lambda function) option's payoff function at maturity
     model: either crr or gbm
+    exercise_style: either European or American
 
     output:
-    list of prices
+    list of (should converge) prices
     '''
     prices = [0] * num_sim
 
@@ -90,14 +91,20 @@ class BinomialTree:
         assert self.r * np.sqrt(self.T/N) <= self.sigma, ' r \sqrt{T/N} <= sigma is not fulfilled, leading to arbitrage'
       
       p_tilde = (np.exp( (self.r - self.d) * dt ) - down) / (up - down)
-      price_node = np.zeros((N+1,N+1))
-      price_node[:, -1] =  payoff(price_tree[:, -1])
-      # price_node[:, -1] = np.maximum(price_tree[:, -1] - K, 0 )
+      cash_flows = np.zeros((N+1,N+1))
+      cash_flows[:, -1] =  payoff(price_tree[:, -1])
 
-      for j in range(N-1, -1, -1):
-        for i in range(j+1):
-          price_node[i,j] = np.exp(-self.r * dt) * (p_tilde * price_node[i,j+1] + (1-p_tilde) * price_node[i+1,j+1] )
+      if exercise_style == 'European':
+        for j in range(N-1, -1, -1):
+          for i in range(j+1):
+            cash_flows[i,j] = np.exp(-self.r * dt) * (p_tilde * cash_flows[i,j+1] + (1-p_tilde) * cash_flows[i+1,j+1] )
 
-      prices[a - 1] = price_node[0,0]
+      elif exercise_style == 'American':
+        exercise_value = payoff(price_tree)
+        for j in range(N-1, -1, -1):
+          for i in range(j+1):
+            cash_flows[i,j] = np.maximum(exercise_value[i,j], np.exp(-self.r * dt) * (p_tilde * cash_flows[i,j+1] + (1-p_tilde) * cash_flows[i+1,j+1] ))
+
+      prices[a - 1] = cash_flows[0,0]
 
     return prices
