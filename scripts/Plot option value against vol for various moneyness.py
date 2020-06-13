@@ -1,5 +1,5 @@
 '''
-The purpose of this script file is to answer the question above at quantitative finance stack exchange 
+The purpose of this script file is to answer the question at quantitative finance stack exchange (link below)
 asking to reproduce the plot of option price against volatility for various moneyness 
 in the paper 'Pricing Options and Computing Implied Volatilities using Neural Networks'
 
