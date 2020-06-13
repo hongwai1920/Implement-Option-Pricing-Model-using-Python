@@ -3,8 +3,11 @@ The purpose of this script file is to answer the question above at quantitative 
 asking to reproduce the plot of option price against volatility for various moneyness 
 in the paper 'Pricing Options and Computing Implied Volatilities using Neural Networks'
 
-Question Link: https://quant.stackexchange.com/questions/51736/pricing-options-and-computing-implied-volatilities-using-neural-networks-strang
-Paper Link: https://arxiv.org/pdf/1901.08943.pdf
+Question Link: 
+https://quant.stackexchange.com/questions/51736/pricing-options-and-computing-implied-volatilities-using-neural-networks-strang
+
+Paper Link: 
+https://arxiv.org/pdf/1901.08943.pdf
 '''
 
 from Option import *
