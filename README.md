@@ -29,7 +29,7 @@ On the other hand, the likelihood ratio method asserts that
 <p align="center"> <img  src="https://latex.codecogs.com/svg.latex?\Delta&space;=&space;\frac{d}{d&space;S(0)}\mathbb{E}&space;[e^{-rT}&space;(S_T-K)^&plus;]&space;=&space;\mathbb{E}&space;\left[&space;e^{-rT}(S_T-K)^&plus;&space;\left(&space;\frac{&space;\ln&space;\left(&space;\frac{S(T)}{S(0)}&space;\right)&space;-&space;(r&space;-&space;\frac{1}{2}\sigma^2)T&space;}{&space;S(0)\sigma^2&space;T}&space;\right)&space;\right]." title="\Delta = \frac{d}{d S(0)}\mathbb{E} [e^{-rT} (S_T-K)^+] = \mathbb{E} \left[ e^{-rT}(S_T-K)^+ \left( \frac{ \ln \left( \frac{S(T)}{S(0)} \right) - (r - \frac{1}{2}\sigma^2)T }{ S(0)\sigma^2 T} \right) \right]."></p> 
 Therefore, one can use the Monte-Carlo method again to calculate the final expectation.
 
-## [4. Recombining_Trees.ipynb](https://nbviewer.jupyter.org/github/hongwai1920/Implement-Option-Pricing-Model-using-Python/blob/master/4.%20Recombining_Trees.ipynb)
+## [4. Option_Pricing_using_CRR_and_Discrete_Geometric_Brownian_Motion_Binomial_Trees.ipynb](https://nbviewer.jupyter.org/github/hongwai1920/Implement-Option-Pricing-Model-using-Python/blob/master/4.%20Option_Pricing_using_CRR_and_Discrete_Geometric_Brownian_Motion_Binomial_Trees.ipynb)
 This notebook uses various binomial trees simulation including CRR and discretize GBM to price options. 
 The following plots contain convergence of CRR and GBM simulations for European and Binary call and put options.
 Green line is the analytical pricing obtained by Black-Scholes.
