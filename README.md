@@ -40,8 +40,3 @@ For BS price at both American call and put options, the green line corresponds t
 Since dividend is zero, both American and European call should worth the same, which is illustrated in the American call plot below.
 
 <p align="center"> <img  src="https://github.com/hongwai1920/Implement-Option-Pricing-Model-using-Python/blob/master/Images/CCR_GBM_tree_simulations.png" width="850" height="600"></p> 
-
-## Plot_Option_Value_Against_Vol_for_Various_Moneyness.ipynb
-This notebook is to answer the [question at quantitative finance stack exchange](https://quant.stackexchange.com/questions/51736/pricing-options-and-computing-implied-volatilities-using-neural-networks-strang) asking to reproduce the plot of option price against volatility for various moneyness in the paper [Pricing Options and Computing Implied Volatilities using Neural Networks](https://arxiv.org/pdf/1901.08943.pdf).
-
-<p align="center"> <img  src="https://github.com/hongwai1920/Implement-Option-Pricing-Model-using-Python/blob/master/Images/option_value_against_vol_different_moneyness.png" width="400" height="300"></p> 
